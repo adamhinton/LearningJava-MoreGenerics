@@ -30,7 +30,10 @@ public class Main {
 
         var queryList = new QueryList<>(lpaStudents);
         var matches = queryList.getMatches("Course", "Python");
-        printMoreLists(matches);
+//        printMoreLists(matches);
+
+        var students2021 = QueryList.<Student>getMatches(students,"Yearstarted", "2021");
+        printMoreLists(students2021);
 
     }
 
