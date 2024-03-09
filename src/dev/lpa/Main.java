@@ -15,21 +15,26 @@ public class Main {
             students.add(new Student());
         }
         students.add(new LPAStudent());
-        printList(students);
+        printMoreLists(students);
 
         List<LPAStudent> lpaStudents = new ArrayList<>();
         for(int i=0; i<studentCount; i++){
             lpaStudents.add(new LPAStudent());
         }
-        printList(lpaStudents);
+        printMoreLists(lpaStudents);
 
 
     }
 
-    public static <T extends Student> void printList(List<T> students){
+    public static void printMoreLists(List<? extends Student> students){
         for (var student : students){
-            System.out.println(student);
+            System.out.println(student.getYearStarted() + ": " + student);
         }
     }
+//    public static <T extends Student> void printList(List<T> students){
+//        for (var student : students){
+//            System.out.println(student.getYearStarted() + ": " + student);
+//        }
+//    }
 
 }
