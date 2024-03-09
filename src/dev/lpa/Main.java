@@ -2,6 +2,7 @@ package dev.lpa;
 
 import dev.lpa.model.LPAStudent;
 import dev.lpa.model.Student;
+import dev.lpa.util.Employee;
 import dev.lpa.util.QueryList;
 
 import java.util.ArrayList;
@@ -32,8 +33,9 @@ public class Main {
         var matches = queryList.getMatches("Course", "Python");
 //        printMoreLists(matches);
 
-        var students2021 = QueryList.<Student>getMatches(students,"Yearstarted", "2021");
+        var students2021 = QueryList.getMatches(students,"Yearstarted", "2021");
         printMoreLists(students2021);
+
 
     }
 
