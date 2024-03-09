@@ -51,13 +51,16 @@ public class Main {
 //    }
 
     public static void testList(List<?>  list){
+
         for (var element: list){
             if(element instanceof String s){
                 System.out.println("String: " + s.toUpperCase());
             }
-            if(element instanceof Integer i){
+
+            else if(element instanceof Integer i){
                 System.out.println("Integer: " + i.floatValue());
             }
+
         }
     }
 
