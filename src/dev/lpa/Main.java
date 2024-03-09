@@ -2,6 +2,7 @@ package dev.lpa;
 
 import dev.lpa.model.LPAStudent;
 import dev.lpa.model.Student;
+import dev.lpa.util.QueryList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +24,13 @@ public class Main {
         }
 //        printMoreLists(lpaStudents);
 
-        testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
+//        testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
 
-        testList(new ArrayList<Integer>(List.of(1, 2, 3)));
+//        testList(new ArrayList<Integer>(List.of(1, 2, 3)));
+
+        var queryList = new QueryList<>(lpaStudents);
+        var matches = queryList.getMatches("Course", "Python");
+        printMoreLists(matches);
 
     }
 
