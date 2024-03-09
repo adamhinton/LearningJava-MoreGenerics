@@ -27,8 +27,9 @@ public class Main {
     }
 
     public static void printMoreLists(List<? extends Student> students){
+
         for (var student : students){
-            System.out.println(student.getYearStarted() + ": " + student);
+            System.out.println(student);
         }
     }
 //    public static <T extends Student> void printList(List<T> students){
@@ -36,5 +37,28 @@ public class Main {
 //            System.out.println(student.getYearStarted() + ": " + student);
 //        }
 //    }
+
+//    public static void testList(List<String> list){
+//        for(var element : list){
+//            System.out.println("String: " + element.toUpperCase());
+//        }
+//    }
+//
+//    public static void testList(List<Integer> list){
+//        for(var element : list){
+//            System.out.println("Integer: " + element.floatValue());
+//        }
+//    }
+
+    public static void testList(List<?>  list){
+        for (var element: list){
+            if(element instanceof String s){
+                System.out.println("String: " + s.toUpperCase());
+            }
+            if(element instanceof Integer i){
+                System.out.println("Integer: " + i.floatValue());
+            }
+        }
+    }
 
 }
