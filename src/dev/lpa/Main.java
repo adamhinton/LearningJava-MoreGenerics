@@ -15,14 +15,17 @@ public class Main {
             students.add(new Student());
         }
         students.add(new LPAStudent());
-        printMoreLists(students);
+//        printMoreLists(students);
 
         List<LPAStudent> lpaStudents = new ArrayList<>();
         for(int i=0; i<studentCount; i++){
             lpaStudents.add(new LPAStudent());
         }
-        printMoreLists(lpaStudents);
+//        printMoreLists(lpaStudents);
 
+        testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
+
+        testList(new ArrayList<Integer>(List.of(1, 2, 3)));
 
     }
 
