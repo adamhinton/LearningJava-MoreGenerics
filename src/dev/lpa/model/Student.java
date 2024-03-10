@@ -11,6 +11,18 @@ public class Student implements QueryItem, Comparable<Student> {
     private int yearStarted;
     private int studentID;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public int getStudentID() {
+        return studentID;
+    }
+
     @Override
     public int compareTo(Student s) {
         int idCompare = Integer.compare(this.studentID, s.studentID);

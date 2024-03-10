@@ -14,5 +14,15 @@ public class LPAStudent extends Student{
         return "%s %8.1f%%".formatted(super.toString(), percentComplete);
     }
 
+    @Override
+    public boolean matchFieldValue(String fieldName, String value) {
+        String fName = fieldName.toUpperCase();
+        return switch (fName){
+            case "NAME" -> this.getName().equalsIgnoreCase(value);
+            case "COURSE" -> this.getCourse().equalsIgnoreCase(value);
+            case "YEARSTARTED" -> this.getYearStarted() >= (Integer.parseInt(value));
+            default -> false;
+        };
+    }
 
 }
