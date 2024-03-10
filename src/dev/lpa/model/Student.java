@@ -6,22 +6,18 @@ import java.util.Random;
 
 public class Student implements QueryItem, Comparable<Student> {
 
+    private static int last_id = 10_000;
+    private int studentID;
     private String name;
     private String course;
     private int yearStarted;
-    private static int last_id = 0;
-    private int studentID;
+
 
 
 
     @Override
     public int compareTo(Student s) {
-        int idCompare = Integer.compare(this.studentID, s.studentID);
-
-        if(idCompare != 0){
-            return idCompare;
-        }
-        return Integer.compare(this.yearStarted, s.yearStarted);
+        return Integer.valueOf(studentID).compareTo(s.studentID);
     }
 
     @Override
@@ -54,7 +50,7 @@ public class Student implements QueryItem, Comparable<Student> {
 
     @Override
     public String toString() {
-        return "%-15s %-15s %d".formatted(name, course, yearStarted);
+        return "%d %-15s %-15s %d".formatted(studentID, name, course, yearStarted);
     }
 
     public int getYearStarted() {

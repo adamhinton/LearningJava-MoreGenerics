@@ -4,7 +4,6 @@ import dev.lpa.model.LPAStudent;
 import dev.lpa.model.Student;
 import dev.lpa.util.QueryList;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -14,20 +13,27 @@ public class Main {
 
 //        List<LPAStudent> lpaStudents = new ArrayList<>();
 
-        int studentCount = 25;
-        List<LPAStudent> lpaStudents = new QueryList<>(new ArrayList<>());
-        for(int i=0; i<studentCount; i++){
-            lpaStudents.add(new LPAStudent());
+        QueryList<LPAStudent> queryList = new QueryList<>();
+        for(int i=0; i<5; i++){
+            queryList.add(new LPAStudent());
         }
-        lpaStudents.add(new LPAStudent());
 
-        printMoreLists(lpaStudents);
-        System.out.println("-".repeat(20));
-        lpaStudents.sort(Comparator.naturalOrder());
-        printMoreLists(lpaStudents);
+        System.out.println("Ordered:");
+        queryList.sort(Comparator.naturalOrder());
+        printList(queryList);
+
+
+
 
 
     }
+
+    public static void printList(List<?> students){
+        for(var student : students){
+            System.out.println(students);
+        }
+    }
+
 
     public static void printMoreLists(List<? extends Student> students){
 
