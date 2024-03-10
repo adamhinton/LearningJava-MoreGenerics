@@ -14,7 +14,7 @@ public class Main {
 //        List<LPAStudent> lpaStudents = new ArrayList<>();
 
         QueryList<LPAStudent> queryList = new QueryList<>();
-        for(int i=0; i<5; i++){
+        for(int i=0; i<25; i++){
             queryList.add(new LPAStudent());
         }
 
@@ -22,15 +22,15 @@ public class Main {
         queryList.sort(Comparator.naturalOrder());
         printList(queryList);
 
+        System.out.println("Matches");
+        var matches=  queryList.getMatches("PERCENTCOMPLETE", "50").getMatches("COURSE", "Python");
 
-
-
-
+        printList(matches);
     }
 
     public static void printList(List<?> students){
         for(var student : students){
-            System.out.println(students);
+            System.out.println(student);
         }
     }
 

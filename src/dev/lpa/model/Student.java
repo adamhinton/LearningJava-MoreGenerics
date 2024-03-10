@@ -20,6 +20,8 @@ public class Student implements QueryItem, Comparable<Student> {
         return Integer.valueOf(studentID).compareTo(s.studentID);
     }
 
+
+
     @Override
     public boolean matchFieldValue(String fieldName, String value) {
         String fName = fieldName.toUpperCase();

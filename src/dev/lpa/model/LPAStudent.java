@@ -17,8 +17,8 @@ public class LPAStudent extends Student{
     @Override
     public boolean matchFieldValue(String fieldName, String value) {
         String fName = fieldName.toUpperCase();
-        if(fName == "YEARSTARTED"){
-            return this.getYearStarted() >= (Integer.parseInt(value));
+        if(fName == "PERCENTCOMPLETE"){
+            return percentComplete <= (Integer.parseInt(value));
         }
         return super.matchFieldValue(fieldName, value);
     }
