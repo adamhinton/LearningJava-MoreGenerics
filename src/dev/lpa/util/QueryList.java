@@ -5,13 +5,6 @@ import dev.lpa.model.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-record Employee (String name) implements QueryItem{
-    @Override
-    public boolean matchFieldValue(String fieldName, String value) {
-        return false;
-    }
-}
-
 public class QueryList <T extends Student & QueryItem>{
 
     private List<T> items;
