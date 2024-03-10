@@ -1,14 +1,31 @@
 package dev.lpa;
 
+import dev.lpa.model.LPAStudent;
 import dev.lpa.model.Student;
 import dev.lpa.util.QueryList;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        var bob = new QueryList<Student>();
+
+//        List<LPAStudent> lpaStudents = new ArrayList<>();
+
+        int studentCount = 25;
+        List<LPAStudent> lpaStudents = new QueryList<>(new ArrayList<>());
+        for(int i=0; i<studentCount; i++){
+            lpaStudents.add(new LPAStudent());
+        }
+        lpaStudents.add(new LPAStudent());
+
+        printMoreLists(lpaStudents);
+        System.out.println("-".repeat(20));
+        lpaStudents.sort(Comparator.naturalOrder());
+        printMoreLists(lpaStudents);
+
 
     }
 

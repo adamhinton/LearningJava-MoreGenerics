@@ -9,19 +9,10 @@ public class Student implements QueryItem, Comparable<Student> {
     private String name;
     private String course;
     private int yearStarted;
+    private static int last_id = 0;
     private int studentID;
 
-    public String getName() {
-        return name;
-    }
 
-    public String getCourse() {
-        return course;
-    }
-
-    public int getStudentID() {
-        return studentID;
-    }
 
     @Override
     public int compareTo(Student s) {
@@ -58,6 +49,7 @@ public class Student implements QueryItem, Comparable<Student> {
         name = firstNames[random.nextInt(5)] + " " + (char) lastNameIndex;
         course = courses[random.nextInt(3)];
         yearStarted = random.nextInt(2018, 2023);
+        studentID = Student.last_id++;
     }
 
     @Override
