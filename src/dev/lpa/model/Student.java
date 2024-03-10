@@ -13,7 +13,12 @@ public class Student implements QueryItem, Comparable<Student> {
 
     @Override
     public int compareTo(Student s) {
-        return Integer.compare(this.studentID, s.studentID);
+        int idCompare = Integer.compare(this.studentID, s.studentID);
+
+        if(idCompare != 0){
+            return idCompare;
+        }
+        return Integer.compare(this.yearStarted, s.yearStarted);
     }
 
     @Override
