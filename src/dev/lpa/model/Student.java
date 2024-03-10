@@ -4,7 +4,18 @@ import dev.lpa.util.QueryItem;
 
 import java.util.Random;
 
-public class Student implements QueryItem {
+public class Student implements QueryItem, Comparable<Student> {
+
+    private String name;
+    private String course;
+    private int yearStarted;
+    private int studentID;
+
+    @Override
+    public int compareTo(Student s) {
+        return Integer.compare(this.studentID, s.studentID);
+    }
+
     @Override
     public boolean matchFieldValue(String fieldName, String value) {
         String fName = fieldName.toUpperCase();
@@ -16,9 +27,6 @@ public class Student implements QueryItem {
         };
     }
 
-    private String name;
-    private String course;
-    private int yearStarted;
 
     // want Students to access
     protected static Random random = new Random();
