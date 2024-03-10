@@ -17,12 +17,10 @@ public class LPAStudent extends Student{
     @Override
     public boolean matchFieldValue(String fieldName, String value) {
         String fName = fieldName.toUpperCase();
-        return switch (fName){
-            case "NAME" -> this.getName().equalsIgnoreCase(value);
-            case "COURSE" -> this.getCourse().equalsIgnoreCase(value);
-            case "YEARSTARTED" -> this.getYearStarted() >= (Integer.parseInt(value));
-            default -> false;
-        };
+        if(fName == "YEARSTARTED"){
+            return this.getYearStarted() >= (Integer.parseInt(value));
+        }
+        return super.matchFieldValue(fieldName, value);
     }
 
 }
